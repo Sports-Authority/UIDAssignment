@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CONFIRMATION PAGE USING JAVA</title>
+        <link rel="stylesheet" href="footballcss.css" >
+    </head> 
+    <body>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h2>REGISTRATION FOR FOOTBALL!</h2>
+                <input type="text" id="first name" placeholder="Your First Name" required>
+                <input type="text" id="last name" placeholder=  "Your lastName"  required>
+                <input type="number" id="age" placeholder=  "Your Age"  required>
+                <input type="date" id="date of birth" placeholder=  "Your Date of Birth"  required>
+                <input type="text" id="gender" placeholder="Specify your gender" required>
+                <input type="email" id="email" placeholder=  "Your email"  required>
+                <input type="text" id="contactnumber" placeholder=  "Your Contact Number"  required>
+                <textarea id="Position"  placeholder="Specify Your Position"></textarea>
+                <input type="password" id="password" placeholder="Create a Password" required>
+                <button type="submit">Send</button>
+            </form>
+       </div>
+       <script src="https://smtpjs.com/v3/smtp.js"></script>
+       <script>
+           function sendEmail(){
+            Email.send({
+    SecureToken : "d888a790-73db-4241-93bb-ffdc2b35d273",
+    To : 'sports.authority.of.india.fch@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+           }
+       </script>
+
+       </body>
+       </html>
